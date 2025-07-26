@@ -939,3 +939,27 @@ span {
 img {
     border-radius: 20px;
 }
+
+#game {
+  background-color: white; /* ubah dari hitam ke putih */
+  padding: 60px 20px;
+  border-radius: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+#game h2 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#game iframe {
+  width: 100%;
+  height: 600px; /* diperbesar dari 500px */
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); /* opsional biar soft */
+}
