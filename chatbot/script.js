@@ -32,8 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
         "berat badan kamu berapa?": "Berat badan saya 65kg.",
         "kamu tinggal dimana": "Saya tinggal di Ciamis, Kecamatan Jatinagara, Desa Dayeuhluhur.",
         "halo": "Halo! Ada yang bisa saya bantu?",
+        "apakah kamu main mobile legends?": "Ya, saya suka bermain Mobile Legends,Nickname Mobile Legends saya juliann.Nanti Mabar Ya!",
         "hai": "Hai! Ada yang perlu ditanyakan?",
-        "p": "Halo! Ada yang bisa saya bantu?",
+        "makanan favorit?": "Saya suka makan Sate.",
+        "bagaimana cara menghubungi anda?": "Anda bisa menghubungi saya Melalui icon sosial media yang ada di portofolio",
         "assalamualaikum": "Waalaikumsalam! Ada yang bisa saya bantu?",
         "premium": "Versi premium saya memiliki fitur-fitur tambahan seperti tema ungu eksklusif dan kemampuan yang lebih canggih!",
         "fitur": "Saya bisa menjawab berbagai pertanyaan tentang Rafka. Tanyakan tentang hobi, pendidikan, atau kemampuan saya!",
@@ -72,7 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Jika tidak ditemukan, cari berdasarkan kata kunci
         const keywords = {
             "nama": "Nama saya Rafka Julian Pratama.",
-            "usia": "Usia saya 16 tahun.",
+            "malam": "Malam Juga!",
+            "pagi": "Selamat Pagi!",
+            "siang": "Siang Juga!",
+            "sore": "Sore Juga!",
+            "makanan": "Saya suka makan Sate.",
+            "menghubungi": "Anda bisa menghubungi saya Melalui icon sosial media yang ada di portofolio.",
+            "usia umur": "Usia saya 16 tahun.",
+            "mobile legends": "Ya, saya suka bermain Mobile Legends,Nickname Mobile Legends saya juliann.Nanti Mabar Ya!",
             "umur": "Usia saya 16 tahun.",
             "lahir": "Saya lahir 6 Juli 2009.",
             "sekolah": "Saya sekolah di SMKN 1 Kawali.",
@@ -86,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
             "alamat": "Saya tinggal di Ciamis, Kecamatan Jatinagara, Desa Dayeuhluhur.",
             "halo": "Halo! Ada yang bisa saya bantu?",
             "hai": "Hai! Ada yang perlu ditanyakan?",
-            "p": "Halo! Ada yang bisa saya bantu?",
             "assalamualaikum": "Waalaikumsalam! Ada yang bisa saya bantu?"
         };
 
