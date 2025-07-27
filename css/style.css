@@ -964,38 +964,44 @@ img {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); /* opsional biar soft */
 }
 
+/* Ikon Chatbot */
 .chatbot-icon {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 60px;
-        height: 60px;
-        background: #a683eb;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        z-index: 1000;
-        transition: transform 0.3s;
-    }
-    
-    .chatbot-icon:hover {
-        transform: scale(1.1);
-    }
-    
-    .chatbot-iframe {
-        position: fixed;
-        bottom: 100px;
-        right: 30px;
-        width: 400px;
-        height: 500px;
-        border: none;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        z-index: 999;
-        display: none;
-    }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #a855f7, #7c3aed); /* gradasi ungu */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-icon:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Hanya glow, tidak zoom */
+}
+
+.chatbot-icon i {
+  color: white;
+  font-size: 26px;
+}
+
+/* Tampilan iframe chatbot */
+.chatbot-iframe {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 360px;
+  height: 540px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  display: none; /* awalnya disembunyikan */
+  z-index: 9998;
+}
+
+

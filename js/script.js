@@ -19,7 +19,7 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
@@ -28,31 +28,26 @@ window.onscroll = () => {
     });
 
 
-/*========== sticky navbar ==========*/
-let header = document.querySelector('.header');
+    /*========== sticky navbar ==========*/
+    let header = document.querySelector('.header');
 
-header.classList.toggle('sticky', window.scrollY > 100);
+    header.classList.toggle('sticky', window.scrollY > 100);
 
 
-/*========== remove menu icon navbar when click navbar link (scroll) ==========*/
-menuIcon.classList.remove('bx-x');
-navbar.classList.remove('active');
+    /*========== remove menu icon navbar when click navbar link (scroll) ==========*/
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
 
 };
 
-const chatbotIcon = document.getElementById('chatbot-icon');
-    const chatbotIframe = document.getElementById('chatbot-iframe');
-    
-    chatbotIcon.addEventListener('click', () => {
-        chatbotIframe.style.display = chatbotIframe.style.display === 'block' ? 'none' : 'block';
-    });
-    
-    // Untuk menangani perintah close dari iframe
-    window.addEventListener('message', (event) => {
-        if (event.data === 'close_chatbot') {
-            chatbotIframe.style.display = 'none';
-        }
-    });
+
+const icon = document.getElementById("chatbot-icon");
+const iframe = document.getElementById("chatbot-iframe");
+
+icon.addEventListener("click", () => {
+    iframe.style.display = iframe.style.display === "block" ? "none" : "block";
+});
+
 
 
 /*========== swiper ==========*/
@@ -62,12 +57,12 @@ var swiper = new Swiper(".mySwiper", {
     loop: true,
     grabCursor: true,
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
 });
 
