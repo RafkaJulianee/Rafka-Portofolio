@@ -21,7 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Database respons
     const responses = {
         "nama kamu siapa?": "Nama saya Rafka Julian Pratama.",
+        "drakor": "Ya, saya suka menonton drakor. Drakor favorit saya adalah Dutty After Scholl dan masih banyak lagi'.",
         "usia kamu berapa?": "Usia saya 16 tahun.",
+        "anime": "Ya, saya suka menonton anime. Anime favorit saya adalah Bleach, Naruto,Demon Slayer, dan masih banyak lagi.",
+        "panggi": "Kamu bisa memanggil saya Rafka.",
         "tahun tanggal lahir?": "Saya lahir 6 Juli 2009.",
         "sekolah dimana?": "Saya sekolah di SMKN 1 Kawali.",
         "hobby?": "Hobi saya bermain sepak bola.",
