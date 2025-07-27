@@ -40,6 +40,20 @@ navbar.classList.remove('active');
 
 };
 
+const chatbotIcon = document.getElementById('chatbot-icon');
+    const chatbotIframe = document.getElementById('chatbot-iframe');
+    
+    chatbotIcon.addEventListener('click', () => {
+        chatbotIframe.style.display = chatbotIframe.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    // Untuk menangani perintah close dari iframe
+    window.addEventListener('message', (event) => {
+        if (event.data === 'close_chatbot') {
+            chatbotIframe.style.display = 'none';
+        }
+    });
+
 
 /*========== swiper ==========*/
 var swiper = new Swiper(".mySwiper", {

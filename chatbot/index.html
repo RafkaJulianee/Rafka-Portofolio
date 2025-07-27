@@ -1,12 +1,412 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot</title>
+    <title>RefkaBot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #a683eb;
+            --primary-dark: #8c6bcf;
+            --light: #f5f5f5;
+            --dark: #333;
+            --gray: #888;
+            --bg-light: #ffffff;
+            --bg-dark: #1e1e1e;
+            --chat-bg-light: #f0f0f0;
+            --chat-bg-dark: #2a2a2a;
+            --user-msg: #a683eb;
+            --bot-msg-light: #e6e6e6;
+            --bot-msg-dark: #3a3a3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--dark);
+            transition: background-color 0.3s, color 0.3s;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body.dark-theme {
+            background-color: var(--bg-dark);
+            color: var(--light);
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            background: var(--bg-light);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+
+        .dark-theme .chat-container {
+            background: var(--bg-dark);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .dark-theme .chat-header {
+            background: var(--primary-dark);
+        }
+
+        .chat-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .chat-time {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bot-message {
+            background: var(--bot-msg-light);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .dark-theme .bot-message {
+            background: var(--bot-msg-dark);
+            color: var(--light);
+        }
+
+        .user-message {
+            background: var(--user-msg);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .quick-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 20px 15px;
+        }
+
+        .quick-option {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .quick-option:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .dark-theme .quick-option {
+            background: var(--primary-dark);
+        }
+
+        .dark-theme .quick-option:hover {
+            background: #7a5bc5;
+        }
+
+        .chat-input-container {
+            display: flex;
+            padding: 10px 20px 20px;
+            gap: 10px;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: border-color 0.2s;
+            background: var(--bg-light);
+            color: var(--dark);
+        }
+
+        .dark-theme .message-input {
+            background: var(--chat-bg-dark);
+            color: var(--light);
+            border-color: var(--primary-dark);
+        }
+
+        .message-input:focus {
+            border-color: var(--primary-dark);
+        }
+
+        .send-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .send-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .dark-theme .send-btn {
+            background: var(--primary-dark);
+        }
+
+        .dark-theme .send-btn:hover {
+            background: #7a5bc5;
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 10px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .dark-theme .welcome-message {
+            color: #aaa;
+        }
+
+        /* Scrollbar styling */
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .dark-theme .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--primary-dark);
+        }
+    </style>
 </head>
 <body>
-    <h1>Chat Bot Rafka Selasa 29 July  2025</h1>
-    
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-title">RefkaBot</div>
+            <div class="chat-time" id="current-time">10:50</div>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Halo! Saya RefkaBot. Ada yang bisa saya bantu?
+            </div>
+            <div class="welcome-message">
+                Klik salah satu opsi pertanyaan di bawah untuk memulai
+            </div>
+        </div>
+        
+        <div class="quick-options" id="quick-options">
+            <button class="quick-option" data-question="nama kamu siapa?">Nama kamu siapa?</button>
+            <button class="quick-option" data-question="usia kamu berapa?">Usia berapa?</button>
+            <button class="quick-option" data-question="sekolah dimana?">Sekolah dimana?</button>
+            <button class="quick-option" data-question="kemampuan kamu apa?">Kemampuan kamu?</button>
+        </div>
+        
+        <div class="chat-input-container">
+            <input type="text" class="message-input" id="message-input" placeholder="Ketik pesan..." autocomplete="off">
+            <button class="send-btn" id="send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Update waktu
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+
+        }
+        
+        updateTime();
+        setInterval(updateTime, 60000);
+        
+        // Elemen DOM
+        const chatMessages = document.getElementById('chat-messages');
+        const messageInput = document.getElementById('message-input');
+        const sendBtn = document.getElementById('send-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const quickOptions = document.getElementById('quick-options');
+        
+        // Pertanyaan dan jawaban
+        const responses = {
+            "nama kamu siapa?": "Nama saya Rafka Julian Pratama.",
+            "usia kamu berapa?": "Usia saya 16 tahun.",
+            "tahun tanggal lahir?": "Saya lahir 6 Juli 2009.",
+            "sekolah dimana?": "Saya sekolah di SMKN 1 Kawali.",
+            "hobby?": "Hobi saya bermain sepak bola.",
+            "kamu smp dimana?": "Saya pernah sekolah di SMPN 1 Kawali.",
+            "sd kamu dimana?": "Saya pernah sekolah di SDN 1 Dayeuhluhur.",
+            "kemampuan kamu apa?": "Saya bisa desain grafis, UI/UX, dan web programming.",
+            "tinggi kamu berapa?": "Tinggi saya 163 cm.",
+            "berat badan kamu berapa?": "Berat badan saya 65kg.",
+            "kamu tinggal dimana": "Saya tinggal di Ciamis, Kecamatan Jatinagara, Desa Dayeuhluhur.",
+            "halo": "Halo! Ada yang bisa saya bantu?",
+            "hai": "Hai! Ada yang perlu ditanyakan?",
+            "p": "Halo! Ada yang bisa saya bantu?",
+            "assalamualaikum": "Waalaikumsalam! Ada yang bisa saya bantu?",
+            "default": "Maaf, saya belum mengerti pertanyaan Anda. Silakan tanyakan hal lain."
+        };
+        
+        // Tambah pesan ke chat
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Proses pesan pengguna
+        function processUserMessage(message) {
+            addMessage(message, true);
+            
+            // Cari jawaban yang sesuai
+            const lowerMessage = message.toLowerCase();
+            let response = responses.default;
+            
+            for (const [key, value] of Object.entries(responses)) {
+                if (lowerMessage.includes(key.toLowerCase())) {
+                    response = value;
+                    break;
+                }
+            }
+            
+            // Beri jeda sebelum bot membalas
+            setTimeout(() => {
+                addMessage(response);
+            }, 500);
+        }
+        
+        // Kirim pesan saat tombol diklik
+        sendBtn.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                processUserMessage(message);
+                messageInput.value = '';
+            }
+        });
+        
+        // Kirim pesan saat tekan Enter
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const message = messageInput.value.trim();
+                if (message) {
+                    processUserMessage(message);
+                    messageInput.value = '';
+                }
+            }
+        });
+        
+        // Opsi cepat
+        quickOptions.addEventListener('click', (e) => {
+            if (e.target.classList.contains('quick-option')) {
+                const question = e.target.dataset.question;
+                processUserMessage(question);
+            }
+        });
+        
+        // Tombol close
+        closeBtn.addEventListener('click', () => {
+            // Kirim pesan ke parent window untuk menutup iframe
+            window.parent.postMessage('close_chatbot', '*');
+        });
+        
+        // Fungsi untuk menangani tema gelap/terang
+        function handleThemeChange(isDark) {
+            document.body.classList.toggle('dark-theme', isDark);
+        }
+        
+        // Cek tema saat pertama kali dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            // Untuk demonstrasi, kita set tema secara acak
+            const isDark = Math.random() > 0.5;
+            handleThemeChange(isDark);
+        });
+    </script>
 </body>
 </html>
