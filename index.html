@@ -215,6 +215,29 @@
         <h2 class="heading">Hubungi <span>Saya</span></h2>
 
         <form action="#">
+            <script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const inputs = this.querySelectorAll("input, textarea");
+    const data = {
+      nama: inputs[0].value,
+      email: inputs[1].value,
+      telepon: inputs[2].value,
+      subjek: inputs[3].value,
+      pesan: inputs[4].value,
+      waktu: new Date().toLocaleString()
+    };
+
+    const semuaPesan = JSON.parse(localStorage.getItem("pesan")) || [];
+    semuaPesan.push(data);
+    localStorage.setItem("pesan", JSON.stringify(semuaPesan));
+
+    alert("Pesan berhasil disimpan!");
+    this.reset();
+  });
+</script>
+
             <div class="input-box">
                 <input type="text" placeholder="Nama Lengkap">
                 <input type="email" placeholder="Alamat Email">

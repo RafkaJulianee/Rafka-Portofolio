@@ -76,6 +76,9 @@ darkModeIcon.onclick = () => {
 };
 
 
+  
+
+
 /*========== scroll reveal ==========*/
 ScrollReveal({
     // reset: true,
