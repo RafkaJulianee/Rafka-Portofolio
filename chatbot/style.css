@@ -98,25 +98,10 @@
      color: rgba(255, 255, 255, 0.85);
  }
 
- .close-btn {
-     background: rgba(255, 255, 255, 0.2);
-     border: none;
-     color: white;
-     font-size: 1.5rem;
-     cursor: pointer;
-     width: 30px;
-     height: 30px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     border-radius: 50%;
-     transition: all 0.3s ease;
- }
 
- .close-btn:hover {
-     background: rgba(255, 255, 255, 0.3);
-     transform: rotate(90deg);
- }
+
+
+
 
  .chat-messages {
      flex: 1;
