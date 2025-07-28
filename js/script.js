@@ -85,9 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  
-
-
 /*========== scroll reveal ==========*/
 ScrollReveal({
     // reset: true,
