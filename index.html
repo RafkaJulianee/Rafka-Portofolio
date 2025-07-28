@@ -149,13 +149,13 @@
     </section>
 
     <!-- chat bot -->
-<div class="chatbot-icon" id="chatbot-icon">
-  <i class="fas fa-robot"></i>
-  <iframe class="chatbot-iframe" id="chatbot-iframe" src="chatbot/index.html"></iframe>
-</div>
+    <div class="chatbot-icon" id="chatbot-icon">
+        <i class="fas fa-robot"></i>
+        <iframe class="chatbot-iframe" id="chatbot-iframe" src="chatbot/index.html"></iframe>
+    </div>
 
 
-    
+
 
     <!-- portfolio section design -->
     <section class="portfolio" id="portfolio">
@@ -201,55 +201,34 @@
 
     </section>
     <!-- Di index.html portofolio -->
-<section id="game">
- <h2>Game</h2>
-  <iframe src="game/index.html" width="100%" height="500px" style="border: none;"></iframe>
-</section>
+    <section id="game">
+        <h2>Game</h2>
+        <iframe src="game/index.html" width="100%" height="500px" style="border: none;"></iframe>
+    </section>
 
-    
+
 
     <!-- testimonial design -->
 
-    <!-- contact section design -->
     <section class="contact" id="contact">
+        
         <h2 class="heading">Hubungi <span>Saya</span></h2>
+        <form action="database/contact/contact.php" method="POST">
 
-        <form action="#">
-            <script>
-  document.querySelector("form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const inputs = this.querySelectorAll("input, textarea");
-    const data = {
-      nama: inputs[0].value,
-      email: inputs[1].value,
-      telepon: inputs[2].value,
-      subjek: inputs[3].value,
-      pesan: inputs[4].value,
-      waktu: new Date().toLocaleString()
-    };
-
-    const semuaPesan = JSON.parse(localStorage.getItem("pesan")) || [];
-    semuaPesan.push(data);
-    localStorage.setItem("pesan", JSON.stringify(semuaPesan));
-
-    alert("Pesan berhasil disimpan!");
-    this.reset();
-  });
-</script>
 
             <div class="input-box">
-                <input type="text" placeholder="Nama Lengkap">
-                <input type="email" placeholder="Alamat Email">
+                <input type="text" name="nama" placeholder="Nama Lengkap" required>
+                <input type="email" name="email" placeholder="Alamat Email" required>
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Nomer Telepon">
-                <input type="text" placeholder="Email Subject">
+                <input type="number" name="telepon" placeholder="Nomer Telepon" required>
+                <input type="text" name="subject" placeholder="Email Subject" required>
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Pesan Anda"></textarea>
+            <textarea name="pesan" cols="30" rows="10" placeholder="Pesan Anda" required></textarea>
             <input type="submit" value="Kirim Pesan" class="btn">
         </form>
     </section>
+
 
     <!-- footer design -->
     <footer class="footer">
@@ -271,6 +250,7 @@
 
     <!-- custom js -->
     <script src="js/script.js"></script>
+
 </body>
 
 </html>

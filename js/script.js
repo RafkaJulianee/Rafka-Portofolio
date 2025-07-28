@@ -75,6 +75,15 @@ darkModeIcon.onclick = () => {
     document.body.classList.toggle('dark-mode');
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('status') === 'success') {
+      alert("Pesan berhasil dikirim!");
+      // Hapus status dari URL agar tidak muncul lagi saat di-refresh
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  });
+
 
   
 
