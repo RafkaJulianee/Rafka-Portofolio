@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Elemen DOM
+
     const chatContainer = document.getElementById('chat-container');
     const chatMessages = document.getElementById('chat-messages');
     const messageInput = document.getElementById('message-input');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const quickOptions = document.getElementById('quick-options');
     const currentTime = document.getElementById('current-time');
 
-    // Perbarui waktu
+    // update waktu
     function updateTime() {
         const now = new Date();
         const hours = now.getHours().toString().padStart(2, '0');
@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     updateTime();
-    setInterval(updateTime, 60000); // Update setiap menit
-
-    // Database respons
+    setInterval(updateTime, 60000); //menit
     const responses = {
         "nama kamu siapa?": "Nama saya Rafka Julian Pratama.",
         "drakor": "Ya, saya suka menonton drakor. Drakor favorit saya adalah Dutty After Scholl dan masih banyak lagi'.",
