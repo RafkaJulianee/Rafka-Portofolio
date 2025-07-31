@@ -461,78 +461,6 @@ span {
     color: #333;
 }
 
-.testimonial-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 5rem 1rem;
-}
-
-.testimonial-container .testimonial-wrapper {
-    position: relative;
-    max-width: 90rem;
-    width: 100%;
-    padding: 5rem;
-}
-
-.testimonial-wrapper .testimonial-box {
-    padding: 1rem;
-    border-radius: 2rem;
-    overflow: hidden;
-}
-
-.testimonial-content .testimonial-slide {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background: var(--bg-color);
-    border-radius: 2rem;
-    box-shadow: 0 .1rem .5rem var(--shadow-color);
-    padding: 3rem 5rem;
-    border-top: .8rem solid var(--main-color);
-    border-bottom: .8rem solid var(--main-color);
-}
-
-.testimonial-slide img {
-    width: 14rem;
-    height: 14rem;
-    object-fit: cover;
-    border-radius: 50%;
-    border: .5rem solid var(--bg-color);
-    outline: .5rem solid var(--main-color);
-}
-
-.testimonial-slide h3 {
-    font-size: 2.5rem;
-    margin: 2rem 0;
-}
-
-.testimonial-slide p {
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-.testimonial-box .swiper-button-next,
-.testimonial-box .swiper-button-prev {
-    color: var(--main-color);
-}
-
-.testimonial-box .swiper-button-next {
-    right: 0;
-}
-
-.testimonial-box .swiper-button-prev {
-    left: 0;
-}
-
-.testimonial-box .swiper-pagination-bullet {
-    background: rgba(0, 0, 0, .8);
-}
-
-.testimonial-box .swiper-pagination-bullet-active {
-    background: var(--main-color);
-}
 
 .contact {
     min-height: auto;
@@ -936,74 +864,77 @@ span {
         font-size: 4.5rem;
     }
 }
+
 img {
     border-radius: 20px;
 }
 
 #game {
-  background-color: white; /* ubah dari hitam ke putih */
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1000px;
-  margin: 0 auto;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    /* ubah dari hitam ke putih */
+    padding: 60px 20px;
+    border-radius: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 #game h2 {
-  text-align: center;
-  color: #333;
-  font-size: 50px;
-  margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 50px;
+    margin-bottom: 20px;
 }
 
 #game iframe {
-  width: 100%;
-  height: 600px; /* diperbesar dari 500px */
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); /* opsional biar soft */
+    width: 100%;
+    height: 600px;
+    /* diperbesar dari 500px */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    /* opsional biar soft */
 }
 
 /* Ikon Chatbot */
 .chatbot-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #a855f7, #7c3aed); /* gradasi ungu */
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    /* gradasi ungu */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .chatbot-icon:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Hanya glow, tidak zoom */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    /* Hanya glow, tidak zoom */
 }
 
 .chatbot-icon i {
-  color: white;
-  font-size: 26px;
+    color: white;
+    font-size: 26px;
 }
 
 /* Tampilan iframe chatbot */
 .chatbot-iframe {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 360px;
-  height: 540px;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  display: none; /* awalnya disembunyikan */
-  z-index: 9998;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 360px;
+    height: 540px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    display: none;
+    /* awalnya disembunyikan */
+    z-index: 9998;
 }
-
-
-
-
