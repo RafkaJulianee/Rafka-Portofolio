@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RefkaBot</title>
+    <title>RafkaBot</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Chat Container -->
-    <div class="chat-container" id="chat-container">
+    <!-- Kontainer Chat -->
+    <div class="chat-container" id="kontainerChat">
         <div class="chat-header">
             <div class="profile-section">
                 <div class="profile-icon">
@@ -19,7 +19,6 @@
                 </div>
                 <div class="profile-info">
                     <h2>Rafka|Bot</h2>
-                    <!-- Status indicator moved here -->
                     <div class="status-indicator">
                         <div class="status-dot"></div>
                         <span>Online</span>
@@ -27,22 +26,21 @@
                 </div>
             </div>
             <div class="chat-actions">
-                <div class="chat-time" id="current-time">--:--</div>
-                    <i class="fas fa-times"></i>
-                </button>
+                <div class="chat-time" id="waktuSekarang">--:--</div>
+                <i class="fas fa-times"></i>
             </div>
         </div>
 
-        <div class="chat-messages" id="chat-messages">
+        <div class="chat-messages" id="pesanChat">
             <div class="message bot-message">
                 Halo! Saya Rafka|Bot. Ada yang bisa saya bantu?
             </div>
             <div class="welcome-message">
-                Tanya apa Saja
+                Tanya apa saja
             </div>
         </div>
 
-        <div class="quick-options" id="quick-options">
+        <div class="quick-options" id="opsiCepat">
             <button class="quick-option" data-question="nama kamu siapa?">Nama kamu siapa?</button>
             <button class="quick-option" data-question="usia kamu berapa?">Usia berapa?</button>
             <button class="quick-option" data-question="sekolah dimana?">Sekolah dimana?</button>
@@ -50,15 +48,14 @@
         </div>
 
         <div class="chat-input-container">
-            <input type="text" class="message-input" id="message-input" placeholder="Ketik pesan..." autocomplete="off">
-            <button class="send-btn" id="send-btn">
+            <input type="text" class="message-input" id="inputPesan" placeholder="Ketik pesan..." autocomplete="off">
+            <button class="send-btn" id="tombolKirim">
                 <i class="fas fa-paper-plane"></i>
             </button>
         </div>
     </div>
+
     <script src="script.js"></script>
-
-
 </body>
 
 </html>
