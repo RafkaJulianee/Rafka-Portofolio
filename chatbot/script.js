@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "pagi": "Selamat Pagi!",
             "siang": "Siang Juga!",
             "sore": "Sore Juga!",
+            "kenapa masuk rpl": "Saya Ingin Mengembangkan Bakat Saya di Bidang Pengembangan Aplikasi Dan Web.",
             "makanan": "Saya suka makan Sate.",
             "menghubungi": "Anda bisa menghubungi saya Melalui icon sosial media yang ada di portofolio.",
             "usia umur": "Usia saya 16 tahun.",
