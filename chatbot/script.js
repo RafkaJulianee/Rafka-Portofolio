@@ -34,8 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
         "berat badan kamu berapa?": "Berat badan saya 65kg.",
         "kamu tinggal dimana": "Saya tinggal di Ciamis, Kecamatan Jatinagara, Desa Dayeuhluhur.",
         "halo": "Halo! Ada yang bisa saya bantu?",
+        "alamat kamu dimana": "Saya tinggal di Ciamis, Kecamatan Jatinagara, Desa Dayeuhluhur.",
         "apakah kamu main mobile legends?": "Ya, saya suka bermain Mobile Legends. Nickname saya juliann. Nanti mabar ya!",
         "hai": "Hai! Ada yang perlu ditanyakan?",
+
         "warnafavoritkesukaan?": "Warna favorit saya adalah ungu.",
         "club bola kesukaan?": "Club bola favorit saya adalah Liverpool.",
         "pemain bola favorit?": "Pemain bola favorit saya adalah Son Heung Min.",
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "alasan masuk rpl": "Saya ingin mengembangkan bakat saya di bidang pengembangan aplikasi dan web.",
             "warna": "Warna favorit saya adalah ungu.",
             "makanan": "Saya suka makan sate.",
+            "lagi ngapain": "Saya Lagi Scroll Tiktok.",
             
             "menghubungi": "Anda bisa menghubungi saya melalui ikon sosial media di portofolio saya.",
             "usia umur": "Usia saya 16 tahun.",
