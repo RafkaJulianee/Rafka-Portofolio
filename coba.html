@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline Pendidikan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      padding: 20px;
+    }
+
+ .timeline {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 60px; /* geser semua isi lebih jauh dari garis */
+  border-left: 3px solid #3498db;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 20px; /* jarak ekstra antar teks dengan garis */
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -23px;  /* geser bulat biar pas dengan garis */
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #3498db;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.duration-line {
+  position: absolute;
+  left: -3px;
+  top: 20px;
+  width: 3px;
+  background: #3498db;
+}
+ 
+
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .timeline-item span {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .timeline-item p {
+      margin: 5px 0 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Experience</h2>
+  <h4>Pendidikan</h4>
+  <div class="timeline">
+    <div class="timeline-item" data-start="2020" data-end="2025">
+      <h3></h3>
+      <span>2017- 2020</span>
+      <p>Sekolah di SDN1DAEUHLUHUR.</p>
+      <div class="duration-line"></div>
+    </div>
+    <div class="timeline-item" data-start="2017" data-end="2020">
+      <h3>SMA</h3>
+      <span>2017 - 2020</span>
+      <p>Jurusan IPA.</p>
+      <div class="duration-line"></div>
+    </div>
+    <div class="timeline-item" data-start="2014" data-end="2017">
+      <h3>SMP</h3>
+      <span>2014 - 2017</span>
+      <p>Belajar umum.</p>
+      <div class="duration-line"></div>
+    </div>
+  </div>
+
+  <script>
+    // otomatis hitung panjang garis berdasarkan durasi tahun
+    document.querySelectorAll(".timeline-item").forEach(item => {
+      let start = parseInt(item.getAttribute("data-start"));
+      let end = parseInt(item.getAttribute("data-end"));
+      let years = end - start;
+
+      let line = item.querySelector(".duration-line");
+      line.style.height = (years * 40) + "px"; // tiap tahun panjangnya 40px
+    });
+  </script>
+
+</body>
+</html>

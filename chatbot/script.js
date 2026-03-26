@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
         "anime": "Ya, saya suka menonton anime. Anime favorit saya adalah Bleach, Naruto, Demon Slayer, dan lainnya.",
         "panggi": "Kamu bisa memanggil saya Rafka.",
         "tahun tanggal lahir?": "Saya lahir 6 Juli 2009.",
+
+
+
+
         "sekolah dimana?": "Saya sekolah di SMKN 1 Kawali.",
         "hobby?": "Hobi saya bermain sepak bola.",
         "kamu smp dimana?": "Saya pernah sekolah di SMPN 1 Kawali.",
@@ -84,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
             "warna": "Warna favorit saya adalah ungu.",
             "makanan": "Saya suka makan sate.",
             "lagi ngapain": "Saya Lagi Scroll Tiktok.",
-            
             "menghubungi": "Anda bisa menghubungi saya melalui ikon sosial media di portofolio saya.",
             "usia umur": "Usia saya 16 tahun.",
             "mobile legends": "Ya, saya suka bermain Mobile Legends. Nickname saya juliann. Nanti mabar ya!",
@@ -95,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function () {
             "smp": "Saya pernah sekolah di SMPN 1 Kawali.",
             "sd": "Saya pernah sekolah di SDN 1 Dayeuhluhur.",
             "bahasa pemrograman": "Saya menggunakan HTML, CSS, JavaScript, dan PHP untuk web development. Saya juga bisa Python untuk data science.",
-            "kemampuan skil skills bisa": "Saya bisa desain grafis, UI/UX, dan web programming.",
+            "kemampuan": "Saya bisa desain grafis, UI/UX, dan web programming.",
+            "skills": "Saya bisa desain grafis, UI/UX, dan web programming.",
             "tinggi": "Tinggi saya 163 cm.",
             "berat": "Berat badan saya 65kg.",
             "tinggal": "Saya tinggal di Ciamis, Kecamatan Jatinagara, Desa Dayeuhluhur.",
